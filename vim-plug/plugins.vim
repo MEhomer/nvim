@@ -31,5 +31,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Git integrations
     Plug 'mhinz/vim-signify' 
+    Plug 'tpope/vim-fugitive'
 
 call plug#end()
