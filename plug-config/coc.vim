@@ -55,17 +55,6 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
@@ -137,9 +126,31 @@ nnoremap <silent> <leader>k  :<C-u>CocPrev<CR>
 
 " Coc custom keymappings
 " Search files.
-nnoremap <silent> <leader>p  :<C-u>CocList files<CR>
+nnoremap <silent> <leader>o  :<C-u>CocList files<CR>
 " Search workspace symbols.
 nnoremap <silent> <leader>s  :<C-u>CocList -I symbols<cr>
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Use <leader>p to show signature help
+nnoremap <silent> <leader>p :call <SID>show_signature_help()<CR>
+
+function! s:show_signature_help()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('showSignatureHelp')
+  endif
+endfunction
 
 " Explorer
 nmap <space>e :CocCommand explorer<CR>
