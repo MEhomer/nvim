@@ -36,4 +36,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Smooth scrolling
     Plug 'psliwka/vim-smoothie'
 
+    " Vim startify
+    Plug 'mhinz/vim-startify'
+
 call plug#end()
