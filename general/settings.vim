@@ -46,4 +46,8 @@ set ignorecase                          " Ignore case when searching
 set smartcase                           " Use casesensitive search only when includding uppercase chars 
 "set autochdir                           " Your working directory will always be the same as your working directory
 
+" Set relative numbering
+set rnu
+set nu
+
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
