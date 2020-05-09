@@ -25,5 +25,9 @@
   },
 
   // emmet
-  "emmet.includeLanguages": {"htmldjango": "html"}
+  "emmet.includeLanguages": {"htmldjango": "html"},
+
+  // HTML
+  "html.autoClosingTags": true,
+  "html.format.enable": true
 }
