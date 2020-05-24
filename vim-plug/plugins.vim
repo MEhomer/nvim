@@ -42,4 +42,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Vim commentary (comment stuff out)
     Plug 'tpope/vim-commentary'
 
+    " Vim Multiple Cursors
+    Plug 'terryma/vim-multiple-cursors'
+
+    " Vim Surround
+    Plug 'tpope/vim-surround'
+
 call plug#end()
