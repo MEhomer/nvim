@@ -1,33 +1,42 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "javascript", "graphql", "html", "yaml",  "json", "python"],
-  // "diagnostic.refreshOnInsertMode": true,
-
-  // python config
-  "python.jediEnabled": false,
-  "python.linting.enabled": true,
-  "python.linting.pylintEnabled": true,
-  "python.formatting.provider": "black",
-  "python.formatting.blackPath": "/Users/mehomer/.pyenv/shims/black",
-
-  "snippets.ultisnips.directories": 
-  [
-    "UltiSnips",
-    "~/.config/nvim/utils/snips"
-  ],
-
-  // explorer
-  "explorer.width": 30,
-  "explorer.icon.enableNerdfont": true,
-  "explorer.previewAction.onHover": false,
-  "explorer.keyMappings": {
-    "<cr>": ["expandable?", "expand", "open"],
-    "v": "open:vsplit"
-  },
-
-  // emmet
-  "emmet.includeLanguages": {"htmldjango": "html"},
-
-  // HTML
-  "html.autoClosingTags": true,
-  "html.format.enable": true
+    "coc.preferences.formatOnSaveFiletypes": [
+        "css",
+        "scss",
+        "markdown",
+        "javascript",
+        "graphql",
+        "html",
+        "yaml",
+        "json",
+        "python"
+    ],
+    // python config
+    "python.jediEnabled": false,
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "/Users/mehomer/.pyenv/shims/black",
+    "snippets.ultisnips.directories": [
+        "UltiSnips",
+        "~/.config/nvim/utils/snips"
+    ],
+    // explorer
+    "explorer.width": 45,
+    "explorer.icon.enableNerdfont": true,
+    "explorer.previewAction.onHover": true,
+    "explorer.keyMappings": {
+        "<cr>": [
+            "expandable?",
+            "expand",
+            "open"
+        ],
+        "v": "open:vsplit"
+    },
+    // emmet
+    "emmet.includeLanguages": {
+        "htmldjango": "html"
+    },
+    // HTML
+    "html.autoClosingTags": true,
+    "html.format.enable": true
 }
