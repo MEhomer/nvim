@@ -11,14 +11,14 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Better Syntax Support
     Plug 'sheerun/vim-polyglot'
 
-    " Auto pairs for '(' '[' '{' 
+    " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
 
     " Themes
     Plug 'joshdick/onedark.vim'
 
     " Coc
-    Plug 'neoclide/coc.nvim', {'branch': 'release'} 
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     " Airline Status Line
     Plug 'vim-airline/vim-airline'
@@ -30,7 +30,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'airblade/vim-rooter'
 
     " Git integrations
-    Plug 'mhinz/vim-signify' 
+    Plug 'mhinz/vim-signify'
     Plug 'tpope/vim-fugitive'
 
     " Smooth scrolling
@@ -47,5 +47,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Vim Surround
     Plug 'tpope/vim-surround'
+
+    " Markdown Preview
+    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 call plug#end()

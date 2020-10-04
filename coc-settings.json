@@ -38,5 +38,10 @@
     },
     // HTML
     "html.autoClosingTags": true,
-    "html.format.enable": true
+    "html.format.enable": true,
+    // Markdown
+    "markdownlint.config": {
+        "line_length": false,
+        "ul-indent": false
+    }
 }
