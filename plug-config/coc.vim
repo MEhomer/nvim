@@ -108,5 +108,5 @@ function! s:show_signature_help()
 endfunction
 
 " Explorer
-nmap <space>e :CocCommand explorer<CR>
+nmap <space>e :execute 'CocCommand explorer ' . getcwd()<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
