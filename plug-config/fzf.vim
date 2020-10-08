@@ -16,10 +16,10 @@ nnoremap <leader>f :Rg<CR>
 
 " Command configurations
 let g:fzf_tags_command = 'ctags -R'
+let g:fzf_layout = {'down': '30%'}
 
 let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
 let $FZF_DEFAULT_COMMAND="rg --files --hidden"
-
 
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =
