@@ -16,6 +16,7 @@
     "python.linting.pylintEnabled": true,
     "python.formatting.provider": "black",
     "python.formatting.blackPath": "/Users/mehomer/.pyenv/shims/black",
+    "pyright.organizeimports.provider": "isort",
     "snippets.ultisnips.directories": [
         "UltiSnips",
         "~/.config/nvim/utils/snips"
@@ -39,6 +40,8 @@
     // HTML
     "html.autoClosingTags": true,
     "html.format.enable": true,
+    "html.format.indentInnerHtml": true,
+    "html.format.indentHandlebars": true,
     // Markdown
     "markdownlint.config": {
         "line_length": false,
