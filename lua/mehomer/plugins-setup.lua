@@ -21,75 +21,82 @@ vim.cmd([[
 ]])
 
 local status, packer = pcall(require, "packer")
-if not status then return end
+if not status then
+	return
+end
 
 return packer.startup(function(use)
-    -- `packer` can manage itself
-    use("wbthomason/packer.nvim")
+	-- `packer` can manage itself
+	use("wbthomason/packer.nvim")
 
-    -- Lua functions that many other plugins use
-    use("nvim-lua/plenary.nvim")
+	-- Lua functions that many other plugins use
+	use("nvim-lua/plenary.nvim")
 
-    use("christoomey/vim-tmux-navigator")
-    use("tpope/vim-surround")
-    use("numToStr/Comment.nvim")
+	use("christoomey/vim-tmux-navigator")
+	use("tpope/vim-surround")
+	use("numToStr/Comment.nvim")
 
-    -- File explorer
-    use("nvim-tree/nvim-tree.lua")
+	-- File explorer
+	use("nvim-tree/nvim-tree.lua")
 
-    -- Icons
-    use("nvim-tree/nvim-web-devicons")
+	-- Icons
+	use("nvim-tree/nvim-web-devicons")
 
-    -- Status line
-    use("nvim-lualine/lualine.nvim")
+	-- Status line
+	use("nvim-lualine/lualine.nvim")
 
-    -- Fuzzy finding (with telescope)
-    use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- Dependency for telescope
-    use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" })
+	-- Fuzzy finding (with telescope)
+	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- Dependency for telescope
+	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" })
 
-    -- Autocompletion
-    use("hrsh7th/nvim-cmp")
-    use("hrsh7th/cmp-buffer")
-    use("hrsh7th/cmp-path")
+	-- Autocompletion
+	use("hrsh7th/nvim-cmp")
+	use("hrsh7th/cmp-buffer")
+	use("hrsh7th/cmp-path")
 
-    -- Snippets
-    use("L3MON4D3/LuaSnip")
-    use("saadparwaiz1/cmp_luasnip")
-    use("rafamadriz/friendly-snippets")
+	-- Snippets
+	use("L3MON4D3/LuaSnip")
+	use("saadparwaiz1/cmp_luasnip")
+	use("rafamadriz/friendly-snippets")
 
-    -- LSP (Language Server Protocol)
+	-- LSP (Language Server Protocol)
 
-    -- Managing & installing LSP Servers, Linters & Formatters
-    use("williamboman/mason.nvim")
-    use("williamboman/mason-lspconfig.nvim")
+	-- Managing & installing LSP Servers, Linters & Formatters
+	use("williamboman/mason.nvim")
+	use("williamboman/mason-lspconfig.nvim")
 
-    -- Configuring LSP Servers
-    use("neovim/nvim-lspconfig")
-    use("hrsh7th/cmp-nvim-lsp")
-    use({ "glepnir/lspsaga.nvim", branch = "main" })
-    use("jose-elias-alvarez/typescript.nvim")
-    use("onsails/lspkind.nvim")
-    use("folke/neodev.nvim")
+	-- Configuring LSP Servers
+	use("neovim/nvim-lspconfig")
+	use("hrsh7th/cmp-nvim-lsp")
+	use({ "glepnir/lspsaga.nvim", branch = "main" })
+	use("jose-elias-alvarez/typescript.nvim")
+	use("onsails/lspkind.nvim")
+	use("folke/neodev.nvim")
 
-    -- Formatting & Linting
+	-- Formatting & Linting
+	use("jose-elias-alvarez/null-ls.nvim")
+	use("jayp0521/mason-null-ls.nvim")
 
-    -- TreeSitter
-    use({
-        "nvim-treesitter/nvim-treesitter",
-        run = function()
-            require("nvim-treesitter.install").update({ with_sync = true})
-        end,
-    })
+	-- Tree-sitter
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		run = function()
+			require("nvim-treesitter.install").update({ with_sync = true })
+		end,
+	})
 
-    -- Autoclosing
-    use("windwp/nvim-autopairs")
-    use("windwp/nvim-ts-autotag")
+	-- Autoclosing
+	use("windwp/nvim-autopairs")
+	use("windwp/nvim-ts-autotag")
 
-    -- Theme/Colorscheme
-    use("Mofiqul/dracula.nvim")
-    -- use("dracula/vim")
+	-- Git Signs
+	use("lewis6991/gitsigns.nvim")
 
-    if packer_bootstrap then
-        require("packer").sync()
-    end
+	-- Theme/Colorscheme
+	use("Mofiqul/dracula.nvim")
+	-- use("dracula/vim")
+
+	if packer_bootstrap then
+		require("packer").sync()
+	end
 end)
