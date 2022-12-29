@@ -92,6 +92,9 @@ return packer.startup(function(use)
 	-- Git Signs
 	use("lewis6991/gitsigns.nvim")
 
+	-- Illuminate (hightligh other uses of the word under the cursor)
+	use("RRethy/vim-illuminate")
+
 	-- Theme/Colorscheme
 	use("Mofiqul/dracula.nvim")
 	-- use("dracula/vim")
