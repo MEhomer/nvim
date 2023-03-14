@@ -1,20 +1,28 @@
 local lspconfig_status, lspconfig = pcall(require, "lspconfig")
-if not lspconfig_status then return end
+if not lspconfig_status then
+	return
+end
 
 local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-if not cmp_nvim_lsp_status then return end
+if not cmp_nvim_lsp_status then
+	return
+end
 
 local typescript_setup, typescript = pcall(require, "typescript")
-if not typescript_setup then return end
+if not typescript_setup then
+	return
+end
 
 local neodev_status, neodev = pcall(require, "neodev")
-if not neodev_status then return end
+if not neodev_status then
+	return
+end
 
 local keymap = vim.keymap
 
 -- Enable keybinds for available LSP Servers
 local on_attach = function(client, bufnr)
-    -- Keybind options
+	-- Keybind options
 	local opts = { noremap = true, silent = true, buffer = bufnr }
 
 	-- Set keybinds
@@ -44,47 +52,47 @@ local capabilities = cmp_nvim_lsp.default_capabilities()
 
 -- Python Server
 lspconfig["pyright"].setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-    settings = {
-        python = {
-            analysis = {
-                typeCheckingMode = "basic"
-            }
-        }
-    }
+	capabilities = capabilities,
+	on_attach = on_attach,
+	settings = {
+		python = {
+			analysis = {
+				typeCheckingMode = "basic",
+			},
+		},
+	},
 })
 
 -- Markdown Server
 lspconfig["marksman"].setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
+	capabilities = capabilities,
+	on_attach = on_attach,
 })
 
 -- HTML Server
 lspconfig["html"].setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
+	capabilities = capabilities,
+	on_attach = on_attach,
 })
 
 -- CSS Server
 lspconfig["cssls"].setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
+	capabilities = capabilities,
+	on_attach = on_attach,
 })
 
 -- TailWind CSS Server
 lspconfig["tailwindcss"].setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
+	capabilities = capabilities,
+	on_attach = on_attach,
 })
 
 -- TypeScript Server
 typescript.setup({
-    server = {
-        capabilities = capabilities,
-        on_attach = on_attach,
-    }
+	server = {
+		capabilities = capabilities,
+		on_attach = on_attach,
+	},
 })
 
 -- Lua Server
@@ -92,7 +100,7 @@ typescript.setup({
 neodev.setup()
 
 -- Then `sumneko_lua`
-lspconfig["sumneko_lua"].setup({
+lspconfig["lua_ls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 	settings = { -- custom settings for lua

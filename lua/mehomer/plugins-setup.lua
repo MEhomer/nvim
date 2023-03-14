@@ -95,6 +95,14 @@ return packer.startup(function(use)
 	-- Illuminate (hightligh other uses of the word under the cursor)
 	use("RRethy/vim-illuminate")
 
+	-- Markdown Preview
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	})
+
 	-- Theme/Colorscheme
 	use("Mofiqul/dracula.nvim")
 	-- use("dracula/vim")

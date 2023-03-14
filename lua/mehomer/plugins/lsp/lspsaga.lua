@@ -1,7 +1,7 @@
 local saga_status, saga = pcall(require, "lspsaga")
 if not saga_status then return end
 
-saga.init_lsp_saga({
+saga.setup({
 	-- Keybinds for navigation in lspsaga window
 	move_in_saga = { prev = "<C-k>", next = "<C-j>" },
 	-- Use enter to open file with finder
