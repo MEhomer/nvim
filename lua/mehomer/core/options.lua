@@ -8,8 +8,8 @@ opt.number = true
 opt.numberwidth = 1
 
 -- Tabs & Identation
-opt.tabstop = 4
-opt.shiftwidth = 4
+opt.tabstop = 2
+opt.shiftwidth = 2
 opt.expandtab = true
 opt.autoindent = true
 
