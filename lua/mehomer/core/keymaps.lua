@@ -16,9 +16,9 @@ keymap.set("n", "<leader>sx", ":close<CR>") -- Close current split window <- TOD
 
 -- Tab management TODO: Come back to this one
 keymap.set("n", "<leader>to", ":tabnew<CR>") -- Open new tab
-keymap.set("n", "<leader>tx", ":tabclose<CR>") -- Close current tab
-keymap.set("n", "<leader>tn", ":tabn<CR>") -- Go to next tab
-keymap.set("n", "<leader>tp", ":tabp<CR>") -- Go to previous tab
+keymap.set("n", "<leader>tx", ":bd<CR>") -- Close current tab
+keymap.set("n", "<leader>tn", ":BufferNext<CR>") -- Go to next tab
+keymap.set("n", "<leader>tp", ":BufferPrevious<CR>") -- Go to previous tab
 keymap.set("n", "<leader>tf", ":tabnew %<CR>") -- Open current buffer in a new tab
 
 -- Plugins keymaps
