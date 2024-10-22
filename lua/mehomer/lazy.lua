@@ -11,7 +11,11 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("mehomer.plugins", {
+require("lazy").setup(
+  {
+    { import = "mehomer.plugins" },
+    { import = "mehomer.plugins.lsp" }
+  }, {
   checker = {
     enabled = true,
     notify = false,
