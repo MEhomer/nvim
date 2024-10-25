@@ -18,6 +18,9 @@ return {
 
     local keymap = vim.keymap -- for conciseness
 
+    -- Disable `virtual_text` for diagnostics
+    vim.diagnostic.config({ virtual_text = false })
+
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("UserLspConfig", {}),
       callback = function(ev)
