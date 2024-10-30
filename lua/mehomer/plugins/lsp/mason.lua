@@ -1,37 +1,37 @@
-local mason_status, mason = pcall(require, "mason")
-if not mason_status then
-	return
-end
+return {
+  "williamboman/mason.nvim",
+  dependencies = {
+    "williamboman/mason-lspconfig.nvim",
+  },
+  config = function()
+    local mason = require("mason")
+    local mason_lspconfig = require("mason-lspconfig")
 
-local mason_lspconfig_status, mason_lspconfig = pcall(require, "mason-lspconfig")
-if not mason_lspconfig_status then
-	return
-end
+    -- Enable mason and configure icons
+    mason.setup({
+      ui = {
+        icons = {
+          package_installed = "✓",
+          package_pending = "➜",
+          package_uninstalled = "✗",
+        },
+      },
+    })
 
-local mason_null_ls_status, mason_null_ls = pcall(require, "mason-null-ls")
-if not mason_null_ls_status then
-	return
-end
-
-mason.setup()
-
-mason_lspconfig.setup({
-	ensure_installed = {
-		"pyright", -- Python
-		"marksman", -- MarkDown
-		"html", -- HTML
-		"cssls", -- CSS
-		"tailwindcss", -- TailWind CSS
-		"tsserver", -- Javascript + TypeScript
-		"lua_ls", -- Lua
-	},
-})
-
-mason_null_ls.setup({
-	ensure_installed = {
-		"black",
-		"prettier",
-		"stylua",
-		"eslint_d",
-	},
-})
+    mason_lspconfig.setup({
+      -- List of servers for mason to install
+      ensure_installed = {
+        "html",
+        "cssls",
+        "tailwindcss",
+        "svelte",
+        "lua_ls",
+        "graphql",
+        "emmet_ls",
+        "prismals",
+        "pyright",
+        "rust_analyzer",
+      },
+    })
+  end,
+}

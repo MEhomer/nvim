@@ -1,41 +1,46 @@
--- line numbers
-vim.opt.relativenumber = true
-vim.opt.number = true
-vim.opt.numberwidth = 1
+vim.cmd("let g:netrw_liststyle = 3") -- Use tree directory style
 
--- tabs & indentation
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-vim.opt.autoindent = true
+local opt = vim.opt
 
--- line wrapping
-vim.opt.wrap = false
+-- Line numbers
+opt.relativenumber = true
+opt.number = true
+opt.numberwidth = 1
 
--- search settings
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+-- Tabs & Identation
+opt.tabstop = 2
+opt.shiftwidth = 2
+opt.expandtab = true
+opt.autoindent = true
 
--- cursor line
-vim.opt.cursorline = true
+-- Line wrapping
+opt.wrap = false
 
--- appearance
-vim.opt.termguicolors = true
-vim.opt.background = "dark"
-vim.opt.signcolumn = "yes"
+-- Search settings
+opt.ignorecase = true
+opt.smartcase = true
 
--- backspace
-vim.opt.backspace = "indent,eol,start"
+-- Cursor line
+opt.cursorline = true
 
--- clipboard
-vim.opt.clipboard:append("unnamedplus")
+ -- Appearance
+opt.termguicolors = true
+opt.background = "dark"
+opt.signcolumn = "yes"
 
--- spell check
-vim.opt.spelllang = "en"
-vim.opt.spell = true
+-- Backspace
+opt.backspace = "indent,eol,start"
 
--- split windows
-vim.opt.splitright = true
-vim.opt.splitbelow = true
+-- Clipboard
+opt.clipboard:append("unnamedplus")
 
-vim.opt.iskeyword:append("-")
+-- Spell check
+opt.spelllang = "en"
+opt.spell = true
+
+-- Split windows
+opt.splitright = true
+opt.splitbelow = true
+
+-- Is keyword
+opt.iskeyword:append("-")
