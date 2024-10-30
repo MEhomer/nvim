@@ -7,7 +7,7 @@ return {
 
     lualine.setup({
       options = {
-        theme = "dracula-nvim",
+        theme = "catppuccin",
       },
       sections = {
         lualine_x = {
